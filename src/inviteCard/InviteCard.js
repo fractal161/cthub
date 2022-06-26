@@ -18,14 +18,14 @@ function InviteCard({code}) {
   useEffect(() => {
     fetchData();
   }, []);
-
   return (
     <div className="InviteCard">
-      <p>{code}</p>
-      <img src={iconUrl} alt="icon"></img>
-      <p>{name}</p>
-      <p>{memberCount} Members</p>
-      <button name="Join">
+      <img src={iconUrl} alt="icon" height={48}></img>
+      <div className="InviteCard-text">
+        <h2>{name}</h2>
+        <p>{memberCount} Members</p>
+      </div>
+      <button className="InviteCard-button" name="Join">
         Join
       </button>
     </div>
