@@ -20,6 +20,7 @@
 .InviteCard-text h2 {
   font-size: 20px;
   margin: 0px;
+  overflow: hidden;
 }
 
 .InviteCard-text p {

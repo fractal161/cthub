@@ -1,14 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
+// import App from './App';
 import InviteCard from './inviteCard/InviteCard';
 import reportWebVitals from './reportWebVitals';
+import servers from './servers.json'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <InviteCard code="qXZUKZzv7a"/>
+    {servers.map(server => {
+      return <InviteCard code={server}></InviteCard>
+    })};
+
   </React.StrictMode>
 );
 
