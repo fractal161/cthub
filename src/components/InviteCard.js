@@ -20,7 +20,7 @@ function InviteCard({code}) {
   }, []);
   return (
     <div className="InviteCard">
-      <img src={iconUrl} alt="icon" height={48}></img>
+      <img src={iconUrl} alt="icon" height={48} />
       <div className="InviteCard-text">
         <h2>{name}</h2>
         <p>{memberCount} Members</p>

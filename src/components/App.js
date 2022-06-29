@@ -1,13 +1,15 @@
 import './App.css';
+import Header from './Header.js';
+import SearchBar from './SearchBar.js';
 import Gallery from './Gallery.js';
 
 
 function App() {
   return (
     <>
-      <h1>CTHUB</h1>
-      <input type="text" placeholder="Search.."></input>
-      <div>
+      <Header />
+      <SearchBar />
+      <div id="filters">
         <label for="sort">Sort by: </label>
         <select name="sort" id="sort">
           <option value="members">Members</option>
@@ -15,7 +17,7 @@ function App() {
         </select>
       </div>
       <p>11 results</p>
-      <Gallery></Gallery>
+      <Gallery />
     </>
   );
 }
