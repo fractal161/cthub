@@ -1,5 +1,5 @@
 import './Gallery.css';
-import InviteCard from './inviteCard/InviteCard';
+import InviteCard from './InviteCard.js';
 import servers from './servers.json'
 
 
