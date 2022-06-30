@@ -6,7 +6,7 @@ import Gallery from './Gallery.js';
 
 function App() {
   return (
-    <>
+    <div className="App">
       <Header />
       <SearchBar />
       <div id="filters">
@@ -18,7 +18,7 @@ function App() {
       </div>
       <p>11 results</p>
       <Gallery />
-    </>
+    </div>
   );
 }
 
