@@ -21,7 +21,7 @@ function InviteCard({code}) {
   return (
     <div className="InviteCard">
       <img className="icon" src={iconUrl} alt="icon" height={48} />
-      <div className="InviteCard-text">
+      <div className="InviteCard-text" title={name}>
         <h2>{name}</h2>
         <p id="members">{memberCount} Members</p>
       </div>
