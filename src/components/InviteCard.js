@@ -8,8 +8,14 @@ function InviteCard({code}) {
   const [memberCount, setMemberCount] = useState(0);
   useEffect(() => {
     const fetchData = async () => {
+      console.log(process.env.REACT_APP_DISCORD_TOKEN);
       const res = await axios(
-        `https://discord.com/api/v10/invites/${code}?with_counts=true`,
+        `https://discord.com/api/invites/${code}?with_counts=true`,{
+          // headers: {
+          //   'Authorization': 'Bot ' + process.env.REACT_APP_DISCORD_TOKEN,
+          //   'Access-Control-Allow-Origin': '*'
+          // }
+        }
       );
       const guild = res.data.guild;
       setName(guild.name);
