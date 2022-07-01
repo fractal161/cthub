@@ -16,7 +16,6 @@ function App() {
           <option value="added">Date Added</option>
         </select>
       </div>
-      <p>11 results</p>
       <Gallery />
     </div>
   );
