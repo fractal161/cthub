@@ -1,10 +1,18 @@
 import './App.css';
+import React, { useState, useEffect } from 'react';
 import Header from './Header.js';
 import SearchBar from './SearchBar.js';
 import Gallery from './Gallery.js';
+import servers from './servers.json'
 
 
 function App() {
+  // for now, 0 represents members, 1 represents date added
+  const [sort, setSort] = useState(0);
+  // empty for now because filters are hard
+  const [filters, setFilters] = useState({});
+  const [search, setSearch] = useState('');
+
   return (
     <div className="App">
       <Header />
@@ -16,7 +24,7 @@ function App() {
           <option value="added">Date Added</option>
         </select>
       </div>
-      <Gallery />
+      <Gallery servers={servers}/>
     </div>
   );
 }

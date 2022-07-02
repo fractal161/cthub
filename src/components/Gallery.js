@@ -1,9 +1,8 @@
 import './Gallery.css';
 import InviteCard from './InviteCard.js';
-import servers from './servers.json'
 
 
-function Gallery() {
+function Gallery({servers}) {
   return (
     <>
       <p>{servers.length} results</p>
@@ -11,7 +10,7 @@ function Gallery() {
       <div className="Gallery">
 
         {servers.map(server => {
-          return <InviteCard server={server}></InviteCard>
+          return <InviteCard server={server} key={server.id}></InviteCard>
         })}
       </div>
     </>
