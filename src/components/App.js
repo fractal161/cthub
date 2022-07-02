@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Header from './Header.js';
 import SearchBar from './SearchBar.js';
 import Gallery from './Gallery.js';
@@ -8,10 +8,27 @@ import servers from './servers.json'
 
 function App() {
   // for now, 0 represents members, 1 represents date added
-  const [sort, setSort] = useState(0);
+  const [sort, setSort] = useState('most');
   // empty for now because filters are hard
-  const [filters, setFilters] = useState({});
-  const [search, setSearch] = useState('');
+  // const [filters, setFilters] = useState({});
+  // const [search, setSearch] = useState('');
+  const serverList = useRef(servers);
+
+  useEffect(() => {
+    if(sort === 'most') {
+      serverList.current = servers.sort((a, b) => {
+        return a.members - b.members;
+      });
+    }
+    else if (sort === 'least') {
+      serverList.current = servers.sort((a, b) => {
+        return b.members - a.members;
+      });
+    }
+    else {
+      // error handling? what's that?
+    }
+  });
 
   return (
     <div className="App">
@@ -19,12 +36,13 @@ function App() {
       <SearchBar />
       <div id="filters">
         <label for="sort">Sort by: </label>
-        <select name="sort" id="sort">
-          <option value="members">Members</option>
-          <option value="added">Date Added</option>
+        <select name="sort" id="sort" onChange={(e) => setSort(e.target.value)}>
+          <option value="most">Most Members</option>
+          <option value="least">Least Members</option>
         </select>
       </div>
-      <Gallery servers={servers}/>
+      <p>{serverList.current.length} results</p>
+      <Gallery servers={serverList.current}/>
     </div>
   );
 }
