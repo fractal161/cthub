@@ -1,16 +1,16 @@
 [
     {
-      "id": "374368504465457153",
-      "code": "qXZUKZzv7a",
-      "name": "Classic Tetris Monthly",
-      "icon": "a_6529931d86d3dc947d7eb8fa933b939c",
-      "members": 50000
-    },
-    {
       "id": "609133245925294097",
       "code": "bd8SE4t",
       "name": "Classic Tetris League",
       "icon": "bb2104178500240fdde4954547b4304a",
       "members": 300
+    },
+    {
+      "id": "374368504465457153",
+      "code": "qXZUKZzv7a",
+      "name": "Classic Tetris Monthly",
+      "icon": "a_6529931d86d3dc947d7eb8fa933b939c",
+      "members": 50000
     }
 ]

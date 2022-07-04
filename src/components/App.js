@@ -10,28 +10,42 @@ function App() {
   // empty for now because filters are hard
   // const [filters, setFilters] = useState({});
   // const [search, setSearch] = useState('');
-  const serverList = useRef([]);
+  const [rawServerList, setRawServerList] = useState([]);
+  const [servers, setServers] = useState([]);
   // init full server list upon loading the page
   useEffect(() => {
-    fetch('/api').then(res => res.json())
-      .then(servers => {serverList.current = servers});
+    const fetchData = async () => {
+      const res = await fetch('/api');
+      const s = await res.json();
+      setRawServerList(s);
+    }
+    fetchData();
   }, []);
 
-  useEffect(() => {
+  let addFilters = () => {
+    console.log('sort: ' + sort);
+    if (rawServerList.length === 0) {
+      return;
+    }
+    let serverTmp = [...rawServerList];
     if(sort === 'most') {
-      serverList.current = serverList.current.sort((a, b) => {
-        return a.members - b.members;
+      serverTmp.sort((a, b) => {
+        return b.members - a.members;
       });
     }
     else if (sort === 'least') {
-      serverList.current = serverList.current.sort((a, b) => {
-        return b.members - a.members;
+      serverTmp.sort((a, b) => {
+        return a.members - b.members;
       });
     }
     else {
       // error handling? what's that?
     }
-  }, [sort]);
+    console.log(serverTmp);
+    setServers(serverTmp);
+  };
+
+  useEffect(addFilters, [rawServerList, sort]);
 
   return (
     <div className="App">
@@ -44,8 +58,8 @@ function App() {
           <option value="least">Least Members</option>
         </select>
       </div>
-      <p>{serverList.current.length} results</p>
-      <Gallery servers={serverList.current}/>
+      <p>{servers.length} results</p>
+      <Gallery servers={servers}/>
     </div>
   );
 }
