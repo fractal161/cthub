@@ -3,16 +3,19 @@ import React, { useState, useEffect, useRef } from 'react';
 import Header from './Header.js';
 import SearchBar from './SearchBar.js';
 import Gallery from './Gallery.js';
-import servers from './servers.json'
 
 
 function App() {
-  // for now, 0 represents members, 1 represents date added
   const [sort, setSort] = useState('most');
   // empty for now because filters are hard
   // const [filters, setFilters] = useState({});
   // const [search, setSearch] = useState('');
   const serverList = useRef(servers);
+
+  // init full server list upon loading the page
+  useEffect(() => {
+
+  });
 
   useEffect(() => {
     if(sort === 'most') {
@@ -28,7 +31,7 @@ function App() {
     else {
       // error handling? what's that?
     }
-  });
+  }, [sort]);
 
   return (
     <div className="App">
