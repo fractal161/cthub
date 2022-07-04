@@ -10,21 +10,21 @@ function App() {
   // empty for now because filters are hard
   // const [filters, setFilters] = useState({});
   // const [search, setSearch] = useState('');
-  const serverList = useRef(servers);
-
+  const serverList = useRef([]);
   // init full server list upon loading the page
   useEffect(() => {
-
-  });
+    fetch('/api').then(res => res.json())
+      .then(servers => {serverList.current = servers});
+  }, []);
 
   useEffect(() => {
     if(sort === 'most') {
-      serverList.current = servers.sort((a, b) => {
+      serverList.current = serverList.current.sort((a, b) => {
         return a.members - b.members;
       });
     }
     else if (sort === 'least') {
-      serverList.current = servers.sort((a, b) => {
+      serverList.current = serverList.current.sort((a, b) => {
         return b.members - a.members;
       });
     }
