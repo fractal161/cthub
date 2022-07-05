@@ -1,4 +1,5 @@
 import './InviteCard.css';
+import Button from './Button.js'
 
 function InviteCard({server}) {
   const name = server.name;
@@ -12,9 +13,7 @@ function InviteCard({server}) {
         <h2>{name}</h2>
         <p id="members">{memberCount} Members</p>
       </div>
-      <button className="invite-button" name="Join">
-        Join
-      </button>
+      <Button code={server.code} />
     </div>
   );
 }
