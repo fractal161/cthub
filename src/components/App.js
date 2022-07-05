@@ -23,7 +23,6 @@ function App() {
   }, []);
 
   let addFilters = () => {
-    console.log('sort: ' + sort);
     if (rawServerList.length === 0) {
       return;
     }
@@ -41,7 +40,6 @@ function App() {
     else {
       // error handling? what's that?
     }
-    console.log(serverTmp);
     setServers(serverTmp);
   };
 
