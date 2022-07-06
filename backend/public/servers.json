@@ -4,76 +4,87 @@
     "code": "e8DEntj",
     "name": "Classic Tetris Gauntlet",
     "icon": "10d675fbf629a08be86208236c443252",
-    "members": 618
+    "members": 618,
+    "description": "Tournaments run by ItzSharky1."
   },
   {
     "id": "681320998506856464",
     "code": "teZwHnY",
     "name": "Tetris Friendlies",
     "icon": "447de3e66ea00a7a0f7e9be595512ce2",
-    "members": 625
+    "members": 625,
+    "description": "Spontaneous no-ELO matches. Hosted by BirbWizard and Kingsman36."
   },
   {
     "id": "698835542103687239",
     "code": "NWMaZVF",
     "name": "Classic Tetris Asia",
     "icon": "513d8ddb38a7832904e3c42d932af73a",
-    "members": 169
+    "members": 169,
+    "description": "Asian NES Tetris community."
   },
   {
     "id": "609133245925294097",
     "code": "bd8SE4t",
     "name": "Classic Tetris League",
     "icon": "bb2104178500240fdde4954547b4304a",
-    "members": 917
+    "members": 917,
+    "description": "**ON HIATUS**. Play matches in the division best suited for your skill."
   },
   {
     "id": "374368504465457153",
     "code": "qXZUKZzv7a",
     "name": "Classic Tetris Monthly",
     "icon": "a_6529931d86d3dc947d7eb8fa933b939c",
-    "members": 3855
+    "members": 3855,
+    "description": "The longest running and most popular NES Tetris tournament."
   },
   {
     "id": "735574295887085720",
     "code": "svUBpgp",
     "name": "MaxoutClub",
     "icon": "be93eecd79d27517523312d02798ebc7",
-    "members": 554
+    "members": 554,
+    "description": "Official server for Trey Harrison's online matchmaking software."
   },
   {
     "id": "653546560218595328",
     "code": "7rKFbDm",
     "name": "Classic Tetris LATAM",
     "icon": "4d190c5dd27497320fed48b0576192c3",
-    "members": 473
+    "members": 473,
+    "description": "Latin American NES Tetris community."
   },
   {
     "id": "641835780930535432",
     "code": "4zTnHev",
     "name": "Classic Tetris Brawl",
     "icon": "e05f0b4521ee080e26f97ac6b14d6278",
-    "members": 575
+    "members": 575,
+    "description": "Dog's tournament."
   },
   {
     "id": "754857426116673586",
     "code": "CpbcuaK",
     "name": "NTSC DAS Server",
     "icon": "3518532e4ab61af26f5f0955805b9374",
-    "members": 382
+    "members": 382,
+    "description": "All things DAS."
   },
   {
     "id": "568777428529446912",
     "code": "UTABASS",
     "name": "Classic Tetris PAL",
     "icon": "b4fd2a253742f42ebc9b22cdf00bf38f",
-    "members": 685
+    "members": 685,
+    "description": "Official server for the European (PAL) version of NES Tetris."
   },
   {
     "id": "687333293456097327",
     "code": "7mXJ4YW",
     "name": "World Puzzle League",
     "icon": "a_8f470eb9f21af004f141b2851d4a2d60",
-    "members": 1973
+    "members": 1973,
+    "description": "Tournaments for a variety of Tetris games. Run by BeastinShen."
   }
 ]

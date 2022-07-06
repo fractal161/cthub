@@ -8,12 +8,13 @@ function InviteCard({server}) {
 
   return (
     <div className="InviteCard">
+      <h2>{name}</h2>
       <img className="icon" src={iconUrl} alt="icon" height={48} />
       <div className="InviteCard-text" title={name}>
-        <h2>{name}</h2>
         <p id="members">{memberCount} Members</p>
       </div>
       <Button code={server.code} />
+      <p>{server.description}</p>
     </div>
   );
 }

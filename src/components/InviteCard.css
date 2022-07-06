@@ -4,7 +4,7 @@
   /* height: 100px; */
   padding: 20px 10px 20px 10px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   border-radius: 5px;
@@ -16,10 +16,11 @@
   margin: 0px 15px 0px 15px;
   flex: 1 1 auto;
   min-width: 0px;
+  min-height: 0px;
 }
 
-.InviteCard-text h2 {
-  display: block;
+h2 {
+  display: inline;
   font-size: 18px;
   margin: 0px;
   text-overflow: ellipsis;
