@@ -1,5 +1,6 @@
 import './App.css';
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect } from 'react';
+import Fuse from 'fuse.js';
 import Header from './Header.js';
 import SearchBar from './SearchBar.js';
 import Gallery from './Gallery.js';
@@ -9,7 +10,7 @@ function App() {
   const [sort, setSort] = useState('most');
   // empty for now because filters are hard
   // const [filters, setFilters] = useState({});
-  // const [search, setSearch] = useState('');
+  const [search, setSearch] = useState('');
   const [rawServerList, setRawServerList] = useState([]);
   const [servers, setServers] = useState([]);
   // init full server list upon loading the page
@@ -22,7 +23,11 @@ function App() {
     fetchData();
   }, []);
 
-  let addFilters = () => {
+  let handleSearchChange = (e) => {
+    setSearch(e.target.value);
+  }
+
+  let sortServers = () => {
     if (rawServerList.length === 0) {
       return;
     }
@@ -43,12 +48,28 @@ function App() {
     setServers(serverTmp);
   };
 
-  useEffect(addFilters, [rawServerList, sort]);
+  let searchServers = () => {
+    if (rawServerList.length === 0 || search === '') {
+      setServers(rawServerList);
+      return;
+    }
+    const options = {
+      includeScore: true,
+      shouldSort: false,
+      keys: ['name']
+    }
+    const fuse = new Fuse(rawServerList, options);
+    const result = fuse.search(search);
+    setServers(result.map(x => x.item));
+  }
+
+  useEffect(sortServers, [rawServerList, sort]);
+  useEffect(searchServers, [rawServerList, search]);
 
   return (
     <div className="App">
       <Header />
-      <SearchBar />
+      <SearchBar value={search} onChange={handleSearchChange}/>
       <div id="filters">
         <label for="sort">Sort by: </label>
         <select name="sort" id="sort" onChange={(e) => setSort(e.target.value)}>
