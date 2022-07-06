@@ -27,11 +27,22 @@ function App() {
     setSearch(e.target.value);
   }
 
-  let sortServers = () => {
+  useEffect(() => {
     if (rawServerList.length === 0) {
       return;
     }
     let serverTmp = [...rawServerList];
+    if (search !== '') {
+      const options = {
+        includeScore: true,
+        shouldSort: false,
+        threshold: 0.3,
+        keys: ['name']
+      }
+      const fuse = new Fuse(serverTmp, options);
+      const result = fuse.search(search);
+      serverTmp = result.map(x => x.item);
+    }
     if(sort === 'most') {
       serverTmp.sort((a, b) => {
         return b.members - a.members;
@@ -46,25 +57,7 @@ function App() {
       // error handling? what's that?
     }
     setServers(serverTmp);
-  };
-
-  let searchServers = () => {
-    if (rawServerList.length === 0 || search === '') {
-      setServers(rawServerList);
-      return;
-    }
-    const options = {
-      includeScore: true,
-      shouldSort: false,
-      keys: ['name']
-    }
-    const fuse = new Fuse(rawServerList, options);
-    const result = fuse.search(search);
-    setServers(result.map(x => x.item));
-  }
-
-  useEffect(sortServers, [rawServerList, sort]);
-  useEffect(searchServers, [rawServerList, search]);
+  }, [rawServerList, sort, search]);
 
   return (
     <div className="App">
