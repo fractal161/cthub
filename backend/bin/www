@@ -3,10 +3,19 @@
 /**
  * Module dependencies.
  */
-
+require('dotenv').config({ path: '../.env' })
 var app = require('../app');
 var debug = require('debug')('backend:server');
 var http = require('http');
+const { Client } = require('pg')
+
+const client = new Client({connectionString: process.env.DATABASE_URL})
+client.connect()
+client.query('SELECT * FROM servers', (err, res) => {
+  console.log(err ? err.stack : res.rows[0]) // Hello World!
+  client.end()
+})
+
 
 /**
  * Get port from environment and store in Express.
