@@ -1,9 +1,13 @@
 import './InviteCard.css';
-import Button from './Button.js'
+import Button from './Button.js';
 
-function InviteCard({server}) {
+function InviteCard({ server }) {
   const name = server.name;
-  const iconUrl = ["https://cdn.discordapp.com/icons", server.id, server.icon].join('/');
+  const iconUrl = [
+    'https://cdn.discordapp.com/icons',
+    server.id,
+    server.icon,
+  ].join('/');
   const memberCount = server.members;
 
   return (

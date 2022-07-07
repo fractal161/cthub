@@ -1,6 +1,6 @@
 .invite-button {
   border: none;
-  background-color: #2D7D46;
+  background-color: #2d7d46;
   color: white;
   font-size: 16px;
   padding: 10px 20px 10px 20px;
@@ -8,11 +8,11 @@
 }
 
 .invite-button:hover {
-  background-color: #215B32;
+  background-color: #215b32;
 }
 
 .invite-button:active {
-  background-color: #1E532E;
+  background-color: #1e532e;
 }
 
 a {
