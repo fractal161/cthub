@@ -1,7 +1,7 @@
 .InviteCard {
   background-color: #2F3136;
   color: white;
-  /* height: 100px; */
+  text-align: center;
   padding: 20px 10px 20px 10px;
   display: flex;
   flex-direction: column;
@@ -32,6 +32,7 @@ h2 {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: clip;
+  width: 100%;
 }
 /* #someDiv {
     line-height: 1.5em;
@@ -70,5 +71,6 @@ h2 {
 }
 
 .desc {
+  text-align: left;
   align-self: flex-start;
 }
