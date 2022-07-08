@@ -19,14 +19,16 @@
   align-items: center;
 }
 
-.info:nth-child(1) {
-  justify-self: center;
+.info > :first-child, .info > :last-child {
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
 h2 {
   display: block;
   font-size: 18px;
   margin: 0px;
+  margin-bottom: 10px;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: clip;
@@ -65,4 +67,8 @@ h2 {
   width: 64px;
   height: 64px;
   border-radius: 50%;
+}
+
+.desc {
+  align-self: flex-start;
 }
