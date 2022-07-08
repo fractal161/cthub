@@ -13,12 +13,16 @@ function InviteCard({ server }) {
   return (
     <div className="InviteCard">
       <h2>{name}</h2>
-      <img className="icon" src={iconUrl} alt="icon" height={48} />
-      <div className="InviteCard-text" title={name}>
-        <p id="members">{memberCount} Members</p>
+      <div className="info">
+        <div className="members" title={name}>
+          <p>{memberCount}</p>
+          <p>members</p>
+        </div>
+        <img className="icon" src={iconUrl} alt="icon" height={64} />
+        <Button code={server.code} />
       </div>
-      <Button code={server.code} />
-      <p>{server.description}</p>
+
+      <p className="desc">{server.description}</p>
     </div>
   );
 }

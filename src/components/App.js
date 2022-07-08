@@ -67,7 +67,7 @@ function App() {
           <option value="least">Least Members</option>
         </select>
       </div>
-      <p>{servers.length} results</p>
+      <p id="results">{servers.length} results</p>
       <Gallery servers={servers} />
     </div>
   );

@@ -11,16 +11,19 @@
   box-shadow: 2px 2px 4px 2px #000000;
 }
 
-.InviteCard-text {
-  text-align: left;
-  margin: 0px 15px 0px 15px;
-  flex: 1 1 auto;
-  min-width: 0px;
-  min-height: 0px;
+.info {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.info:nth-child(1) {
+  justify-self: center;
 }
 
 h2 {
-  border: 1px solid red;
   display: block;
   font-size: 18px;
   margin: 0px;
@@ -34,10 +37,11 @@ h2 {
     /* overflow: hidden;  /* prevents extra lines from being visible */
 /* } */
 
-.InviteCard-text p {
+.members p {
   color: #aaaaaa;
   font-size: 12px;
   margin: 0px;
+  text-align: center;
 }
 
 .invite-button {
@@ -58,8 +62,7 @@ h2 {
 }
 
 .icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 25%;
-  border: 5px solid red;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
 }
