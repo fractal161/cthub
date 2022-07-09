@@ -1,6 +1,5 @@
 var express = require('express');
 var db = require('../db');
-var servers = require('../public/servers.json');
 var router = express.Router();
 
 /* GET home page. */

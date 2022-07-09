@@ -4,6 +4,7 @@
  * Module dependencies.
  */
 require('dotenv').config({ path: '../.env' });
+var refresh = require('../refresh')
 var app = require('../app');
 var debug = require('debug')('backend:server');
 var http = require('http');
