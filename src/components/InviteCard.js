@@ -15,7 +15,7 @@ function InviteCard({ server }) {
       <h2>{name}</h2>
       <div className="info">
         <div className="members" title={name}>
-          <p>{memberCount}</p>
+          <p id="count">{memberCount}</p>
           <p>members</p>
         </div>
         <img className="icon" src={iconUrl} alt="icon" height={64} />

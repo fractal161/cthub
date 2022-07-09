@@ -1,12 +1,11 @@
 .InviteCard {
-  background-color: #2F3136;
+  background-color: #2f3136;
   color: white;
   text-align: center;
-  padding: 20px 10px 20px 10px;
+  padding: 20px 0px 20px 0px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  align-self: stretch;
   border-radius: 5px;
   box-shadow: 2px 2px 4px 2px #000000;
 }
@@ -19,14 +18,15 @@
   align-items: center;
 }
 
-.info > :first-child, .info > :last-child {
+.info > :first-child,
+.info > :last-child {
   flex-grow: 1;
   flex-basis: 0;
 }
 
 h2 {
   display: block;
-  font-size: 18px;
+  font-size: 20px;
   margin: 0px;
   margin-bottom: 10px;
   text-overflow: ellipsis;
@@ -37,31 +37,35 @@ h2 {
 /* #someDiv {
     line-height: 1.5em;
     height: 3em;       /* height is 2x line-height, so two lines will display */
-    /* overflow: hidden;  /* prevents extra lines from being visible */
+/* overflow: hidden;  /* prevents extra lines from being visible */
 /* } */
 
+
 .members p {
-  color: #aaaaaa;
+  color: #cccccc;
   font-size: 12px;
   margin: 0px;
   text-align: center;
 }
 
+#count {
+  font-size: 20px;
+}
+
 .invite-button {
   border: none;
-  background-color: #2D7D46;
+  background-color: #2d7d46;
   color: white;
   font-size: 16px;
-  padding: 10px 20px 10px 20px;
   border-radius: 5px;
 }
 
 .invite-button:hover {
-  background-color: #215B32;
+  background-color: #215b32;
 }
 
 .invite-button:active {
-  background-color: #1E532E;
+  background-color: #1e532e;
 }
 
 .icon {
@@ -71,6 +75,8 @@ h2 {
 }
 
 .desc {
+  color: #cccccc;
+  padding: 0px 20px 0px 20px;
+  margin-bottom: 0px;
   text-align: left;
-  align-self: flex-start;
 }
