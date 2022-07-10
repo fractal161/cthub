@@ -36,7 +36,7 @@ function App() {
         includeScore: true,
         shouldSort: false,
         threshold: 0.3,
-        keys: ['name'],
+        keys: ['name', 'description'],
       };
       const fuse = new Fuse(serverTmp, options);
       const result = fuse.search(search);
@@ -50,6 +50,16 @@ function App() {
       serverTmp.sort((a, b) => {
         return a.members - b.members;
       });
+    } else if (sort === 'random') {
+      function shuffleArray(array) {
+        for (var i = array.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
+        }
+        shuffleArray(serverTmp);
+      }
     } else {
       // error handling? what's that?
     }
@@ -65,6 +75,7 @@ function App() {
         <select name="sort" id="sort" onChange={(e) => setSort(e.target.value)}>
           <option value="most">Most Members</option>
           <option value="least">Least Members</option>
+          <option value="random">Random</option>
         </select>
       </div>
       <p id="results">{servers.length} results</p>
